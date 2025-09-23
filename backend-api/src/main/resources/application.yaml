@@ -1,0 +1,13 @@
+spring.application.name: backend-api
+server:
+  ssl:
+    enabled: false
+  servlet:
+    context-path: /service
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

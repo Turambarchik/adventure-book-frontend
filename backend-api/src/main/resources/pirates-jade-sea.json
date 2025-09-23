@@ -1,0 +1,242 @@
+{
+  "title": "Pirates of the Jade Sea",
+  "author": "Marina Blackwood",
+  "difficulty": "MEDIUM",
+  "type": "",
+  "sections": [
+    {
+      "id": 1,
+      "text": "The salty breeze carries the cries of distant gulls as your ship sails across the shimmering Jade Sea. Rumors speak of hidden treasure on the Isle of Serpents.",
+      "type": "BEGIN",
+      "options": [
+        {
+          "description": "Take the helm and steer toward the Isle of Serpents",
+          "gotoId": 666
+        },
+        {
+          "description": "Interrogate the captured pirate in the brig",
+          "gotoId": 999
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "text": "The captured pirate snarls but whispers about a secret cove guarded by a sea monster.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Threaten him for more information",
+          "gotoId": 200,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "3",
+            "text": "The pirate lunges at you with a hidden dagger before the guards subdue him."
+          }
+        },
+        {
+          "description": "Leave him and return to the deck",
+          "gotoId": 1
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "text": "You steer toward the mysterious Isle of Serpents. As you approach, dark storm clouds gather overhead.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Sail through the storm",
+          "gotoId": 300
+        },
+        {
+          "description": "Drop anchor and wait for the storm to pass",
+          "gotoId": 400,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "5",
+            "text": "A rogue wave crashes onto the deck, injuring several crew members."
+          }
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "text": "Shaken, the pirate reveals that the sea monster can be lulled to sleep by an enchanted conch shell hidden deep within a wrecked galleon.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Search for the wrecked galleon",
+          "gotoId": 500
+        },
+        {
+          "description": "Ignore the legend and continue to the island",
+          "gotoId": 100
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "text": "The storm rages violently. Lightning flashes illuminate shadowy shapes beneath the waves.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Dive into the water to investigate",
+          "gotoId": 600,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "7",
+            "text": "A swirling current drags you under before the crew hauls you back aboard."
+          }
+        },
+        {
+          "description": "Stay on deck and brace for impact",
+          "gotoId": 700
+        }
+      ]
+    },
+    {
+      "id": 400,
+      "text": "After hours of waiting, the storm clears and the Isle of Serpents looms ahead, shrouded in mist.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Explore the island",
+          "gotoId": 800
+        }
+      ]
+    },
+    {
+      "id": 500,
+      "text": "You find the wrecked galleon resting on a coral reef. The conch shell glows faintly within a locked chest.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Unlock the chest carefully",
+          "gotoId": 900
+        },
+        {
+          "description": "Smash the chest open",
+          "gotoId": 1000,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "4",
+            "text": "Splinters cut your hands as you force the chest open."
+          }
+        }
+      ]
+    },
+    {
+      "id": 600,
+      "text": "Beneath the waves, you glimpse the massive serpent coiled around a treasure-laden wreck.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Swim closer to investigate",
+          "gotoId": 666
+        },
+        {
+          "description": "Retreat back to the surface",
+          "gotoId": 300
+        }
+      ]
+    },
+    {
+      "id": 700,
+      "text": "The storm subsides. Your ship drifts into calm waters, and the sun breaks through the clouds.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Set a course for the Isle of Serpents",
+          "gotoId": 800
+        }
+      ]
+    },
+    {
+      "id": 800,
+      "text": "You step onto the white sands of the Isle of Serpents. Ancient ruins rise above the jungle canopy.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Search the ruins for treasure",
+          "gotoId": 1200
+        },
+        {
+          "description": "Climb the tallest ruin for a better view",
+          "gotoId": 1300
+        }
+      ]
+    },
+    {
+      "id": 900,
+      "text": "Inside the chest, you find the enchanted conch shell. Its surface hums softly with power.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Blow the conch to summon help",
+          "gotoId": 1400
+        },
+        {
+          "description": "Keep it safe for later",
+          "gotoId": 800
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "text": "The chest bursts open, revealing the glowing conch shell.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Take the shell",
+          "gotoId": 900
+        }
+      ]
+    },
+    {
+      "id": 1200,
+      "text": "Inside the ruins, you discover a chamber filled with gold and jewels, but a trap triggers!",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Dodge the falling stones",
+          "gotoId": 1500,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "6",
+            "text": "A rock grazes your shoulder as you narrowly escape."
+          }
+        },
+        {
+          "description": "Grab the treasure and run",
+          "gotoId": 1400
+        }
+      ]
+    },
+    {
+      "id": 1300,
+      "text": "From the top of the ruins, you spot a hidden lagoon surrounded by jagged cliffs.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Head toward the hidden lagoon",
+          "gotoId": 1400
+        }
+      ]
+    },
+    {
+      "id": 1400,
+      "text": "You reach a secret pirate hideout filled with treasure. The crew celebrates your discovery.",
+      "type": "END"
+    },
+    {
+      "id": 1500,
+      "text": "Breathing heavily, you escape the collapsing ruins with your life intact.",
+      "type": "END"
+    },
+    {
+      "id": 666,
+      "text": "An unreachable whirlpool drags you into darkness. You shouldn’t be here.",
+      "type": "NODE"
+    }
+  ]
+}

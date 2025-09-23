@@ -1,0 +1,75 @@
+{
+  "title": "The Prisoner",
+  "author": "Daniel El Fuego",
+  "difficulty": "HARD",
+  "sections": [
+    {
+      "id": 1,
+      "text": "You wake up in what seems to be a dark prison cell, on an old wooden bed. Metal bars are preventing you to escape from the room. There is no window.",
+      "type": "BEGIN",
+      "options": [
+        {
+          "description": "You try to open the door",
+          "gotoId": 500
+        },
+        {
+          "description": "You look under the bed",
+          "gotoId": 20
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "text": "You don't see anything, it's too dark.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Try to scan the area with your hands",
+          "gotoId": 30,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "6",
+            "text": "As you move your hands left and right under the bed, you cut yourself on a rusty nail."
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "text": "You found what seems to be a door key.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Try to open the door with the key",
+          "gotoId": 1000
+        }
+      ]
+    },
+    {
+      "id": "500",
+      "text": "The door is locked.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Gather your thoughts",
+          "gotoId": 1,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "3",
+            "text": "You're getting a little more crazier..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "1000",
+      "text": "The door opens. You are now free...",
+      "type": "END"
+    },
+    {
+      "id": "666",
+      "text": "Some unreachable node",
+      "type": "NODE"
+    }
+  ]
+}

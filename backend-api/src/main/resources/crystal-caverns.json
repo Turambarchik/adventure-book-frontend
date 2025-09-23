@@ -1,0 +1,184 @@
+{
+  "title": "The Crystal Caverns",
+  "author": "Evelyn Stormrider",
+  "difficulty": "EASY",
+  "sections": [
+    {
+      "id": 1,
+      "text": "You stand at the entrance of the legendary Crystal Caverns. A cold breeze carries whispers from the darkness below. A broken rope bridge leads into the depths.",
+      "type": "BEGIN",
+      "options": [
+        {
+          "description": "Cross the rope bridge carefully",
+          "gotoId": 100
+        },
+        {
+          "description": "Search the rocky walls for another path",
+          "gotoId": 20
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "text": "Your hands brush against the cold stone until you find a hidden crevice leading downward. It's dark, but you hear faint dripping water.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Enter the crevice",
+          "gotoId": 200,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "4",
+            "text": "You scrape your shoulder squeezing through the narrow gap."
+          }
+        },
+        {
+          "description": "Return to the entrance",
+          "gotoId": 1
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "text": "The bridge creaks under your weight. Halfway across, a plank snaps beneath your foot!",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Hold on tightly and crawl across",
+          "gotoId": 300
+        },
+        {
+          "description": "Try to jump to the other side",
+          "gotoId": 400,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "7",
+            "text": "You land hard and twist your ankle."
+          }
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "text": "You emerge into a glittering chamber filled with glowing crystals. At the center lies a pedestal holding an ancient gemstone.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Take the gemstone",
+          "gotoId": 500
+        },
+        {
+          "description": "Inspect the walls carefully",
+          "gotoId": 600
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "text": "You crawl to safety on the other side, breathing heavily. A winding path descends deeper into the cavern.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Follow the path downward",
+          "gotoId": 600
+        },
+        {
+          "description": "Rest and recover your strength",
+          "gotoId": 700,
+          "consequence": {
+            "type": "GAIN_HEALTH",
+            "value": "3",
+            "text": "You feel slightly better after resting."
+          }
+        }
+      ]
+    },
+    {
+      "id": 400,
+      "text": "You barely make the jump, but the rope bridge collapses behind you. There's no turning back now.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Continue deeper into the cavern",
+          "gotoId": 600
+        }
+      ]
+    },
+    {
+      "id": 500,
+      "text": "The moment you touch the gemstone, the chamber begins to shake violently. A secret door opens to reveal a hidden passage.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Enter the hidden passage",
+          "gotoId": 800
+        },
+        {
+          "description": "Drop the gemstone and run back",
+          "gotoId": 200
+        }
+      ]
+    },
+    {
+      "id": 600,
+      "text": "You reach a vast underground lake glowing with bioluminescent crystals. A small boat waits at the shore.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Take the boat across the lake",
+          "gotoId": 900
+        },
+        {
+          "description": "Swim across",
+          "gotoId": 1000,
+          "consequence": {
+            "type": "LOSE_HEALTH",
+            "value": "5",
+            "text": "The freezing water chills you to the bone."
+          }
+        }
+      ]
+    },
+    {
+      "id": 700,
+      "text": "After a short rest, you feel strong enough to continue your journey.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Head toward the underground lake",
+          "gotoId": 600
+        }
+      ]
+    },
+    {
+      "id": 800,
+      "text": "The hidden passage leads to a giant crystal throne room, where an ancient spirit awaits.",
+      "type": "END"
+    },
+    {
+      "id": 900,
+      "text": "The boat carries you safely across, but you sense something massive moving in the depths below.",
+      "type": "NODE",
+      "options": [
+        {
+          "description": "Ignore it and continue forward",
+          "gotoId": 800
+        },
+        {
+          "description": "Investigate the movement",
+          "gotoId": 666
+        }
+      ]
+    },
+    {
+      "id": 1000,
+      "text": "You manage to swim across, shivering but alive. The glowing crystals ahead light your way to a massive door.",
+      "type": "END"
+    },
+    {
+      "id": 666,
+      "text": "An unreachable dead end. You shouldn't be here.",
+      "type": "NODE"
+    }
+  ]
+}
