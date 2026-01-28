@@ -56,7 +56,7 @@ No required parts of the specification were skipped or stubbed.
 
 ### Prerequisites
 
-- Node.js **18+**
+- Node.js >= 20.19
 - npm (or yarn / pnpm)
 
 ### Installation
